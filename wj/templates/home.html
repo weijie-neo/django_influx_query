@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block breadcrumb %}
+<li class="breadcrumb-item active">
+
+<a href="{% url 'charts' %}">Counter</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'charts1' %}">Sawtooth</a>
+ 
+</li>
+{% endblock %}
+
+{% block content %}
+
+<div class= "Warning">
+	{% if user.is_authenticated %}
+		<h1>Welcome, {{ user.username }}</h1> 
+	{% else %}
+		<h1>You must be logged in to view charts</h1>
+
+	{% endif %}
+
+
+</div>
+
+{% endblock %}
